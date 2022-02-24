@@ -24,9 +24,10 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!\n')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    ## user can only enter one city, if the entry is not valid the loop is repeated untill entered correctly
     while True:
        city = input('For which city do you want to explore the bikeshare data: Chicago, New York or Washington? \n> ').lower()
-       print(city)
+       print(city, '\n')
        if city not in CITIES:
            print("Sorry that entry is not valid, please retry.")
            continue
@@ -34,10 +35,11 @@ def get_filters():
            break
 
     # get user input for month (all, january, february, ... , june)
+    ## user can only enter one option, if the entry is not valid the loop is repeated untill entered correctly
     while True:
        month = input('Interesting city you have selected! Do you want to explore a specific month or all months? '\
                     '[Either choose \'all\' to apply no month filter or choose a specific month \n(e.g. january, february, march, april, may, june)] \n> ').lower()
-       print(month)
+       print(month, '\n')
        if month not in MONTHS:
            print("Sorry that is not a valid month entry, please retry and double-check on typo\'s.")
            continue
@@ -46,17 +48,18 @@ def get_filters():
 
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
+    ## user can only enter one option, if the entry is not valid the loop is repeated untill entered correctly
     while True:
          day = input('Are you interested to analyze bikeshare data for a certain weekday or do you want to consider all weekdays?'\
                    ' You can type \'all\' again to apply no day filter or choose from following days. \n(e.g. monday, tuesday, wednesday, thursday, friday, saturday or sunday) \n> ').lower()
-         print(day)
+         print(day, '\n')
          if day not in DAYS:
              print("Sorry that is not a valid entry, please re-enter your selection correctly.")
              continue
          else:
              break
 
-    print('-'*40)
+    print('-'*80)
 
     return city, month, day
 
@@ -120,7 +123,7 @@ def time_stats(df):
     print("The most common start hour is:", most_common_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 
 def station_stats(df):
@@ -142,7 +145,7 @@ def station_stats(df):
     print("The most common combination of start and end station is: ", most_common_combination)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -181,6 +184,7 @@ def user_stats(df):
     # check if birth year is recorded in dataset (excluded for Washington)
     if 'Birth Year' in df:
         # find the earliest birth year
+        ## printing the year as an integer
         earliest_year = min(df['Birth Year'])
         print("\nEarliest Birth Year: ", int(earliest_year))
         # find the most recent birth year
@@ -191,7 +195,7 @@ def user_stats(df):
         print("Most Common Birth Year: ", int(common_birth_year))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 def display_data(df):
     """Displays bikeshare data details."""
@@ -204,17 +208,18 @@ def display_data(df):
     print(df.tail(n=10))  # start by viewing the last ten rows of the dataset!
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
-    i = 10
-    raw = input("\nWould you like to see the next 10 rows of bikeshare data; type 'yes' or 'no'?\n").lower()
+    i = 20
+    raw = input("\nWould you like to see the next 20 rows of bikeshare data; type 'yes' or 'no'?\n").lower()
+    ## showing 20 rows of data instead of 10
     while True:
         if raw == 'no':
             break
-        print('\nAnd displaying the next 10 rows of bikeshare data...\n')
-        print(df[i:i+10])
-        raw = input('\nWould you like to see next 10 rows of bikeshare data?\n').lower()
-        i += 10
+        print('\nAnd displaying the next 20 rows of bikeshare data...\n')
+        print(df[i:i+20])
+        raw = input('\nWould you like to see next 20 rows of bikeshare data?\n').lower()
+        i += 20
 
 def main():
     while True:
@@ -228,9 +233,9 @@ def main():
         display_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
+        print('\nThank you for using this bikeshare progam. Thanks to Udacity for learning Python...\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
