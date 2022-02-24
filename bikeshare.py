@@ -228,9 +228,9 @@ def main():
         display_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
+        print('\nThank you for using this bikeshare progam. Thanks to Udacity for learning Python...\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
