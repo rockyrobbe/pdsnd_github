@@ -24,6 +24,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!\n')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    ## user can only enter one city, if the entry is not valid the loop is repeated untill entered correctly
     while True:
        city = input('For which city do you want to explore the bikeshare data: Chicago, New York or Washington? \n> ').lower()
        print(city, '\n')
@@ -34,6 +35,7 @@ def get_filters():
            break
 
     # get user input for month (all, january, february, ... , june)
+    ## user can only enter one option, if the entry is not valid the loop is repeated untill entered correctly
     while True:
        month = input('Interesting city you have selected! Do you want to explore a specific month or all months? '\
                     '[Either choose \'all\' to apply no month filter or choose a specific month \n(e.g. january, february, march, april, may, june)] \n> ').lower()
@@ -46,6 +48,7 @@ def get_filters():
 
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
+    ## user can only enter one option, if the entry is not valid the loop is repeated untill entered correctly
     while True:
          day = input('Are you interested to analyze bikeshare data for a certain weekday or do you want to consider all weekdays?'\
                    ' You can type \'all\' again to apply no day filter or choose from following days. \n(e.g. monday, tuesday, wednesday, thursday, friday, saturday or sunday) \n> ').lower()
@@ -181,6 +184,7 @@ def user_stats(df):
     # check if birth year is recorded in dataset (excluded for Washington)
     if 'Birth Year' in df:
         # find the earliest birth year
+        ## printing the year as an integer
         earliest_year = min(df['Birth Year'])
         print("\nEarliest Birth Year: ", int(earliest_year))
         # find the most recent birth year
@@ -208,6 +212,7 @@ def display_data(df):
 
     i = 20
     raw = input("\nWould you like to see the next 20 rows of bikeshare data; type 'yes' or 'no'?\n").lower()
+    ## showing 20 rows of data instead of 10
     while True:
         if raw == 'no':
             break
