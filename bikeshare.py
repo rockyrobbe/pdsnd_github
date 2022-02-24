@@ -26,7 +26,7 @@ def get_filters():
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
        city = input('For which city do you want to explore the bikeshare data: Chicago, New York or Washington? \n> ').lower()
-       print(city)
+       print(city, '\n')
        if city not in CITIES:
            print("Sorry that entry is not valid, please retry.")
            continue
@@ -37,7 +37,7 @@ def get_filters():
     while True:
        month = input('Interesting city you have selected! Do you want to explore a specific month or all months? '\
                     '[Either choose \'all\' to apply no month filter or choose a specific month \n(e.g. january, february, march, april, may, june)] \n> ').lower()
-       print(month)
+       print(month, '\n')
        if month not in MONTHS:
            print("Sorry that is not a valid month entry, please retry and double-check on typo\'s.")
            continue
@@ -49,7 +49,7 @@ def get_filters():
     while True:
          day = input('Are you interested to analyze bikeshare data for a certain weekday or do you want to consider all weekdays?'\
                    ' You can type \'all\' again to apply no day filter or choose from following days. \n(e.g. monday, tuesday, wednesday, thursday, friday, saturday or sunday) \n> ').lower()
-         print(day)
+         print(day, '\n')
          if day not in DAYS:
              print("Sorry that is not a valid entry, please re-enter your selection correctly.")
              continue
