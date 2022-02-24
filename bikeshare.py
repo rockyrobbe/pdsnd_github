@@ -56,7 +56,7 @@ def get_filters():
          else:
              break
 
-    print('-'*40)
+    print('-'*80)
 
     return city, month, day
 
@@ -120,7 +120,7 @@ def time_stats(df):
     print("The most common start hour is:", most_common_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 
 def station_stats(df):
@@ -142,7 +142,7 @@ def station_stats(df):
     print("The most common combination of start and end station is: ", most_common_combination)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -191,7 +191,7 @@ def user_stats(df):
         print("Most Common Birth Year: ", int(common_birth_year))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
 def display_data(df):
     """Displays bikeshare data details."""
@@ -204,7 +204,7 @@ def display_data(df):
     print(df.tail(n=10))  # start by viewing the last ten rows of the dataset!
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*80)
 
     i = 10
     raw = input("\nWould you like to see the next 10 rows of bikeshare data; type 'yes' or 'no'?\n").lower()
