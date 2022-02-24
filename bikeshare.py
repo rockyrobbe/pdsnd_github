@@ -206,15 +206,15 @@ def display_data(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*80)
 
-    i = 10
-    raw = input("\nWould you like to see the next 10 rows of bikeshare data; type 'yes' or 'no'?\n").lower()
+    i = 20
+    raw = input("\nWould you like to see the next 20 rows of bikeshare data; type 'yes' or 'no'?\n").lower()
     while True:
         if raw == 'no':
             break
-        print('\nAnd displaying the next 10 rows of bikeshare data...\n')
-        print(df[i:i+10])
-        raw = input('\nWould you like to see next 10 rows of bikeshare data?\n').lower()
-        i += 10
+        print('\nAnd displaying the next 20 rows of bikeshare data...\n')
+        print(df[i:i+20])
+        raw = input('\nWould you like to see next 20 rows of bikeshare data?\n').lower()
+        i += 20
 
 def main():
     while True:
